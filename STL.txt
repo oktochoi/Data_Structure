@@ -1,0 +1,75 @@
+스택
+#include <stack>
+
+stack<int> s;
+
+s.push(10);       // 넣기
+s.pop();          // 맨 위 제거
+s.top();          // 맨 위 값 확인
+s.empty();        // 비어있는지 확인
+s.size();         // 크기
+
+#include <queue>
+
+큐
+queue<int> q;
+
+q.push(10);       // 넣기
+q.pop();          // 맨 앞 제거
+q.front();        // 맨 앞 값 확인
+q.back();         // 맨 뒤 값 확인
+q.empty();        // 비어있는지 확인
+
+MAX_HEAP
+
+priority_queue<int> maxHeap;
+maxHeap.push(10);
+maxHeap.push(20);
+cout << maxHeap.top(); // 20
+
+Min_HEAP
+
+priority_queue<int, vector<int>, greater<int>> minHeap;
+minHeap.push(10);
+minHeap.push(20);
+cout << minHeap.top(); // 10
+
+Sort
+#include <algorithm>
+
+int arr[] = {5, 2, 9, 1};
+sort(arr, arr + 4); // 오름차순 정렬
+
+sort(arr, arr + 4, greater<int>()); // 내림차순 정렬
+
+벡터 정렬
+vector<int> v = {5, 2, 9, 1};
+sort(v.begin(), v.end());                    // 오름차순
+sort(v.begin(), v.end(), greater<int>());    // 내림차순
+
+
+//동적 배열 벡터
+#include <vector>
+vector<int> v = {1, 2, 3};
+v.push_back(4);
+cout << v[0]; // 1
+v.pop_back();
+
+2. deque<T> — 양방향 큐
+앞/뒤 모두 삽입/삭제 O(1)	push_front(), pop_back()
+벡터보다 더 유연함	단방향이 아닌 구조
+#include <deque>
+deque<int> dq;
+dq.push_back(10);
+dq.push_front(20);
+dq.pop_back();
+
+
+✅ 5. set<T> — 중복 없는 자동 정렬 집합
+#include <set>
+set<int> s;
+s.insert(5);
+s.insert(3);
+s.insert(5); // 무시됨
+
+for (int x : s) cout << x << " "; // 3 5
