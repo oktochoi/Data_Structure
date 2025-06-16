@@ -1,0 +1,19 @@
+string 헤더 파일
+
+s.length() / s.size() 문자열 길이
+s.empty() 비어있는지 확인 
+s1 + s2 문자열 연결
+s.substr(1,3) (1~3까지 리턴)
+s.find("ABD") //ABD찾아줌
+
+1. find_first_not_of()
+문자열에서 주어진 문자 집합에 포함되지 않는 첫 번째 문자의 인덱스를 반환
+
+2. find_last_not_of()
+문자열 뒤에서부터 시작하여, 주어진 문자 집합에 포함되지 않는 마지막 문자의 인덱스를 반환
+
+string s = "hello world   ";
+
+size_t pos = s.find_last_not_of(" ");
+cout << pos << endl;
+

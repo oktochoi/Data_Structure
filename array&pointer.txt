@@ -1,0 +1,78 @@
+Array & Pointers
+
+1. 기본 배열
+int arr[5] = {1, 2, 3, 4, 5};
+
+2. 포인터: 다른 변수의 주소를 저장하는 변수
+
+3. 배열 이름은 배열의 첫 요소의 주소와 같다.
+int arr[3] = {10, 20, 30};
+int* p = arr;         // == &arr[0]
+cout << *p;           // 10
+cout << *(p + 1);     // 20
+
+4. 함수에서 배열 다루기: 배열을 함수에 넘기면 자동으로 포인터 처리됨
+void printArr(int arr[], int size) {
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+}
+
+5. 동적 메모리 할당
+
+new로 생성한 변수는 힙(heap)에 저장됨
+
+(1) 기본문법 
+int* p = new int; 
+*p = 42;
+
+delete p; //메모리 해제
+
+(2) 동적 배열
+int* arr = new int[5]; //int형 5개 공간 동적 생성
+
+delete[] arr;
+
+6. 구조체 정의
+
+struct Student {
+    string name;
+    int age;
+    double gpa;
+};
+
+(1) 변수 선언
+Student s1;         // 구조체 변수 선언
+
+(2) 값 할당
+s1.name = "Alice";
+s1.age = 20;
+s1.gpa = 3.8;
+
+(3) 선언과 동시에 초기화
+Student s2 = {"Bob", 21, 4.2};
+
+(4) 구조체 배열
+Student students[3] = {
+    {"Alice", 20, 3.8},
+    {"Bob", 21, 4.2},
+    {"Charlie", 19, 3.5}
+};
+
+(5) 구조체 포인터
+Student s = {"Dave", 22, 3.9};
+Student* p = &s;
+
+cout << p->name << endl;  // 구조체 포인터는 -> 연산자 사용
+
+Student* p = new Student{"Dave", 22, 3.9};  //처음부터 정의 new 사용
+
+(6) C++에서 구조체는 멤버 함수 가질수 있다.
+struct Point {
+    int x, y;
+    void print() {
+        cout << "(" << x << ", " << y << ")" << endl;
+    }
+};
+
+
+//그럼 class와의 차이점 
