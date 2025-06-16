@@ -1,0 +1,21 @@
+Console Input & output (iostream)
+
+std를 생략하고 싶으면
+using namespace std;
+
+endl 대신 "\n"을 써도 되지만 endl은 버퍼까지 flush함
+
+getline() 사용 전 cin.ignore() 사용 (버퍼정리)
+
+입력 명령어 
+std::cin >> 변수;
+공백 또는 엔터로 구분된 두 값을 입력받음
+
+한줄 입력 
+std::getline(std::cin,변수);
+
+출력 명령어 
+std::cout << 변수;
+
+랜덤 명령어
+rand() % 5 (0~4)중 랜덤
