@@ -1,0 +1,14 @@
+#include <sstream>
+#include <string>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string line = "100 200";
+    istringstream iss(line);
+
+    int a, b;
+    iss >> a >> b;
+
+    cout << a << " + " << b << " = " << a + b << endl;
+}

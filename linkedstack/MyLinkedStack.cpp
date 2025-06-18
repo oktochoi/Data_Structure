@@ -48,10 +48,10 @@ void MyLinkedStack::printAll() {
         cout << "Stack is empty" << endl;
         return;
     }
-    while (current != nullptr) {
-        cout << current->data;
-        if (current->next != nullptr) cout << " -> ";
-        current = current->next;
-    }
+        while (current != nullptr) {
+            cout << current->data;
+            if (current->next != nullptr) cout << " -> ";
+            current = current->next;
+        }
     cout << "  (" << getNodeCnt() << " nodes)" << endl;
 }

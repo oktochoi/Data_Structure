@@ -14,13 +14,20 @@ s.size();         // 크기
 큐
 queue<int> q;
 
-q.push(10);       // 넣기
-q.pop();          // 맨 앞 제거
-q.front();        // 맨 앞 값 확인
-q.back();         // 맨 뒤 값 확인
-q.empty();        // 비어있는지 확인
+q.push(x);      // 뒤에 삽입
+q.pop();        // 앞에서 제거
+q.front();      // 맨 앞 원소
+q.back();       // 맨 뒤 원소
+q.empty();      // 비었는지 확인
+q.size();       // 현재 개수
 
 MAX_HEAP
+사용가능
+pq.push(x);     // 삽입
+pq.pop();       // 최우선 원소 제거
+pq.top();       // 최우선 원소 확인
+pq.empty();     // 비었는지 확인
+pq.size();      // 크기
 
 priority_queue<int> maxHeap;
 maxHeap.push(10);
@@ -54,22 +61,39 @@ vector<int> v = {1, 2, 3};
 v.push_back(4);
 cout << v[0]; // 1
 v.pop_back();
+v.size();       // 길이
+v.empty();      // 비었는지 확인
+v.clear();      // 전체 비우기
+v.insert(v.begin() + i, x);  // i 위치에 삽입
+v.erase(v.begin() + i);      // i 위치 제거
+v.erase(v.begin() + i, v.begin() + j); // i ~ j-1 제거
+v.front();      // 첫 번째 값
+v.back();       // 마지막 값
+
 
 2. deque<T> — 양방향 큐
 앞/뒤 모두 삽입/삭제 O(1)	push_front(), pop_back()
 벡터보다 더 유연함	단방향이 아닌 구조
 #include <deque>
 deque<int> dq;
-dq.push_back(10);
-dq.push_front(20);
-dq.pop_back();
+dq.push_front(x);   // 앞에 삽입
+dq.push_back(x);    // 뒤에 삽입
+dq.pop_front();     // 앞 제거
+dq.pop_back();      // 뒤 제거
+dq.front();         // 맨 앞 원소
+dq.back();          // 맨 뒤 원소
+dq.size();          // 크기
+dq.empty();         // 비었는지 확인
+dq.clear();         // 전체 비우기
 
 
 ✅ 5. set<T> — 중복 없는 자동 정렬 집합
 #include <set>
 set<int> s;
-s.insert(5);
-s.insert(3);
-s.insert(5); // 무시됨
-
-for (int x : s) cout << x << " "; // 3 5
+s.insert(x);        // 삽입 (중복 자동 제거)
+s.erase(x);         // 특정 원소 제거
+s.find(x);          // x 위치 반복자 반환 or s.end()
+s.count(x);         // x가 있으면 1, 없으면 0
+s.size();           // 크기
+s.empty();          // 비었는지 확인
+s.clear();          // 전체 비우기
